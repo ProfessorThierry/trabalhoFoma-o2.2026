@@ -1,0 +1,1 @@
+# trabalhoFoma-o2.2026
