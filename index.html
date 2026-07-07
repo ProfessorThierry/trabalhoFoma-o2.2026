@@ -2,87 +2,234 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Turma NC | Empatia e Cooperação</title>
-    <style>
-        /* Estilização para o VS Code Web */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            background-color: #ffffff;
-            max-width: 650px;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        /* TÍTULO: Alinhamento central e cor azul marinho */
-        h1 {
-            color: #002060; 
-            text-align: center; 
-            font-size: 1.9rem;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #e2e8f0; 
-        }
-        
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #4a5568;
-            margin-bottom: 25px;
-            text-align: justify; 
-        }
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .btn-interativo {
-            display: block;
-            width: 100%;
-            background-color: #002060; 
-            color: white;
-            border: none;
-            padding: 14px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        .btn-interativo:hover {
-            background-color: #00143a; 
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formadores | Empatia & Coordenação</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>EmpathCoord</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#equipe">Equipe</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <button class="btn-primary" onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })">
+                Fale Conosco
+            </button>
+        </div>
+    </nav>
 
-    <div class="container">
-        <!-- TÍTULO CENTRALIZADO E AZUL MARINHO -->
-        <h1>Empatia e Cooperação: A Força da Turma NC</h1>
-
-        <!-- IMAGEM: Estudantes de escola pública em grupo/cooperação -->
-        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800" alt="Estudantes em sala de aula de escola pública conversando e cooperando em grupo">
-
-        <!-- PARÁGRAFO PERSONALIZADO PARA A TURMA NC -->
-        <p>
-            Sejam bem-vindos ao blog oficial da Turma NC! A nossa força nasce da nossa união e da nossa realidade. Entendemos que a empatia é a chave para acolher a história de cada colega, enquanto a cooperação é o motor que nos impulsiona a vencer os desafios diários da comunidade escolar. Juntos, compartilhamos conhecimentos, apoiamos uns aos outros e provamos que a educação pública é um espaço de transformação e futuro.
-        </p>
-
-        <!-- BOTÃO DE INTERATIVIDADE -->
-        <button class="btn-interativo" onclick="alert('Conexão confirmada! A Turma NC unida transforma o futuro 🎯')">
-            Clique aqui
+    <!-- Hero com Carrossel -->
+    <header id="home" class="hero">
+        <div class="carousel">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+                <img src="https://picsum.photos/id/1015/1920/1080" alt="Equipe colaborando">
+                <div class="carousel-content">
+                    <h1>Empatia que Conecta</h1>
+                    <p>Desenvolvemos pessoas e equipes através da compreensão mútua e coordenação inteligente.</p>
+                    <a href="#servicos" class="btn-primary">Conheça nossos programas</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/201/1920/1080" alt="Mãos unidas">
+                <div class="carousel-content">
+                    <h1>Coordenação que Transforma</h1>
+                    <p>Alinhe sua equipe com estratégias baseadas em inteligência emocional e trabalho colaborativo.</p>
+                    <a href="#equipe" class="btn-primary">Conheça nossa equipe</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/id/866/1920/1080" alt="Reunião produtiva">
+                <div class="carousel-content">
+                    <h1>Resultados com Humanidade</h1>
+                    <p>Empresas mais fortes, pessoas mais realizadas. O equilíbrio perfeito entre performance e bem-estar.</p>
+                    <a href="#contato" class="btn-primary">Inicie sua transformação</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles do Carrossel -->
+        <button class="carousel-prev" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
         </button>
-    </div>
+        <button class="carousel-next" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <span class="indicator active" onclick="goToSlide(0)"></span>
+            <span class="indicator" onclick="goToSlide(1)"></span>
+            <span class="indicator" onclick="goToSlide(2)"></span>
+        </div>
+    </header>
 
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Nós</h2>
+                <p>Transformamos organizações através da empatia e da coordenação eficaz.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Nosso Propósito</h3>
+                    <p>
+                        Acreditamos que equipes de alta performance nascem quando as pessoas se entendem profundamente. 
+                        Combinamos técnicas de inteligência emocional, facilitação de processos e metodologias ágeis para 
+                        criar ambientes onde todos se sintam valorizados e alinhados com um objetivo comum.
+                    </p>
+                    <ul class="values">
+                        <li><i class="fas fa-heart"></i> Empatia como base</li>
+                        <li><i class="fas fa-sync"></i> Coordenação fluida</li>
+                        <li><i class="fas fa-lightbulb"></i> Inovação humana</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/id/1016/600/400" alt="Equipe em workshop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Serviços</h2>
+                <p>Programas desenvolvidos para criar equipes mais conectadas e produtivas</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Workshops de Empatia</h3>
+                    <p>Sessões práticas para desenvolver inteligência emocional e comunicação assertiva.</p>
+                    <a href="#" class="service-link">Saiba mais →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Coordenação de Equipes</h3>
+                    <p>Metodologias para melhorar o alinhamento, fluxo de trabalho e colaboração.</p>
+                    <a href="#" class="service-link">Saiba mais →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Programas de Liderança</h3>
+                    <p>Formação de líderes empáticos capazes de inspirar e coordenar equipes de alto impacto.</p>
+                    <a href="#" class="service-link">Saiba mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que dizem nossos clientes</h2>
+            </div>
+            
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p>"O workshop de empatia transformou completamente a dinâmica da nossa equipe. Hoje nos comunicamos melhor e entregamos mais."</p>
+                    <div class="testimonial-author">
+                        <strong>Ana Beatriz Silva</strong>
+                        <span>CEO - TechFlow</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"A metodologia de coordenação nos ajudou a reduzir conflitos e aumentar em 40% a eficiência dos projetos."</p>
+                    <div class="testimonial-author">
+                        <strong>Rafael Mendes</strong>
+                        <span>Gerente de Projetos - Inovare</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section bg-light">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Vamos conversar?</h2>
+                    <p>Estamos prontos para ajudar sua organização a desenvolver uma cultura mais empática e coordenada.</p>
+                    
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> contato@empathcoord.com.br</p>
+                        <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                        <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <input type="text" placeholder="Empresa">
+                    <textarea placeholder="Como podemos ajudar?" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>EmpathCoord</span>
+                    </div>
+                    <p>Empatia que coordena.<br>Resultados que transformam.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#equipe">Equipe</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>contato@empathcoord.com.br</p>
+                    <p>(11) 98765-4321</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EmpathCoord. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
